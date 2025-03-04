@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Magic Squares</title>
   <link rel="stylesheet" href="/css/style.css">
+  <script src="javascript/script.js" defer></script>
 </head>
 <body>
   <div class="container">
@@ -16,23 +17,6 @@
     </form>
     <div id="gridContainer"></div>
   </div>
-  <script>
-    document.getElementById('gridForm').addEventListener('submit', function(e) {
-      e.preventDefault();
-      const gridSize = parseInt(document.getElementById('gridSize').value);
-      const gridContainer = document.getElementById('gridContainer');
-      gridContainer.innerHTML = ''; // Clear previous grid
-      // Set up grid columns based on user input
-      gridContainer.style.gridTemplateColumns = `repeat(${gridSize}, 1fr)`;
-      // Create each cell with a number and random delay for staggered animation
-      for (let i = 1; i <= gridSize * gridSize; i++) {
-        const cell = document.createElement('div');
-        cell.classList.add('grid-cell');
-        cell.textContent = i;
-        cell.style.animationDelay = `${Math.random() * 0.5}s`;
-        gridContainer.appendChild(cell);
-      }
-    });
-  </script>
+  
 </body>
 </html>
