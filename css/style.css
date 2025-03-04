@@ -1,0 +1,98 @@
+/* Global styling and background */
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #f093fb, #eec25a);
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+  }
+  .container {
+    text-align: center;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  }
+  h1 {
+    margin-bottom: 20px;
+    font-size: 2rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+  }
+  form {
+    margin-bottom: 20px;
+  }
+  label {
+    font-size: 1.1rem;
+  }
+  input[type="number"] {
+    padding: 8px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    margin: 0 10px;
+    width: 70px;
+    text-align: center;
+  }
+  button {
+    padding: 8px 15px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    background-color: #ff4081;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  button:hover {
+    background-color: #e73370;
+  }
+  /* Grid container styling */
+  #gridContainer {
+    display: grid;
+    gap: 10px;
+    max-width: 90vw;
+    margin: 0 auto;
+  }
+  /* Grid cell styling and animations */
+  .grid-cell {
+    background-color: #f6dda3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    transform: scale(0);
+    animation: pop 0.5s ease forwards, colorShift 5s linear infinite;
+  }
+  /* Pop in animation */
+  @keyframes pop {
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  /* Continuous color shifting animation */
+  @keyframes colorShift {
+    0% { background-color: #e8de52; }
+    25% { background-color: #e87c52; }
+    50% { background-color: #18ffff; }
+    75% { background-color: #6ed457; }
+    100% { background-color: #e8de52; }
+  }
+  /* Optional hover bounce effect */
+  .grid-cell:hover {
+    animation: bounce 0.5s;
+  }
+  @keyframes bounce {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+  }
